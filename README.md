@@ -169,4 +169,4 @@ You can also ask it to find the smallest <i>n</i> such that buffalo<sup><i>n</i>
 
 # ...Why
 
-	I was in a boring 3-hour class with no wifi.
+I was in a boring 3-hour class with no wifi.
