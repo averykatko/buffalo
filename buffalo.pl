@@ -1,3 +1,6 @@
+% grammar fragment for buffalo fun
+% includes some unnecessary non-buffalo words and grammatical features cuz I wanted to play with DCGs
+
 s(s(NP,VP), no_gap) --> np(NP, Number), vp(VP, Number, no_gap, _Valence).
 s(s(np(e),VP), subj_gap) --> vp(VP, Number, no_gap, _Valence).
 s(s(NP,VP), obj_gap) --> np(NP, Number), vp(VP, Number, obj_gap, transitive).
@@ -33,6 +36,8 @@ v(v(sleeps), singular, intransitive) --> [sleeps].
 v(v(sleep), plural, intransitive) --> [sleep].
 v(v(buffaloes), singular, transitive) --> [buffaloes].
 v(v(buffalo), plural, transitive) --> [buffalo].
+
+% code for string exponentiation: (i.e. for "buffalo"^n)
 
 seq_pow(Seq, Pow, Result) :-
 	N is Pow - 1,
