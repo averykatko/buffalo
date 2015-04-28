@@ -41,5 +41,132 @@ Draw the parse tree:
 	                      |
 	                   buffalo
 
+With longer buffalo-sentences, you can press `;` to step through all the possible parses:
+
+	?- draw_buffalo_n_s(5).
+	            s
+	     _______|______
+	    /              \
+	   np              vp
+	    |         ______|_____
+	    |        /            \
+	    n        v            np
+	    |        |         ____|___
+	    |        |        /        \
+	 buffalo  buffalo     n        cp
+	                      |      ___|___
+	                      |     /       \
+	                   buffalo  c        s
+	                            |    ____|___
+	                            |   /        \
+	                            e  np        vp
+	                                |      ___|___
+	                                |     /       \
+	                                e     v       np
+	                                      |        |
+	                                      |        |
+	                                   buffalo     n
+	                                               |
+	                                               |
+	                                            buffalo
 
 
+	true ;
+	            s
+	     _______|______
+	    /              \
+	   np              vp
+	    |         ______|______
+	    |        /             \
+	    n        v             np
+	    |        |         _____|____
+	    |        |        /          \
+	 buffalo  buffalo     n          cp
+	                      |      _____|____
+	                      |     /          \
+	                   buffalo  c           s
+	                            |      _____|____
+	                            |     /          \
+	                            e    np          vp
+	                                  |         __|__
+	                                  |        /     \
+	                                  n        v     np
+	                                  |        |      |
+	                                  |        |      |
+	                               buffalo  buffalo   e
+
+
+	true ;
+	                         s
+	          _______________|_______________
+	         /                               \
+	        np                               vp
+	     ____|___                          ___|___
+	    /        \                        /       \
+	    n        cp                       v       np
+	    |      ___|___                    |        |
+	    |     /       \                   |        |
+	 buffalo  c        s               buffalo     n
+	          |    ____|___                        |
+	          |   /        \                       |
+	          e  np        vp                   buffalo
+	              |      ___|___
+	              |     /       \
+	              e     v       np
+	                    |        |
+	                    |        |
+	                 buffalo     n
+	                             |
+	                             |
+	                          buffalo
+
+
+	true ;
+	                          s
+	           _______________|______________
+	          /                              \
+	         np                              vp
+	     _____|____                        ___|___
+	    /          \                      /       \
+	    n          cp                     v       np
+	    |      _____|____                 |        |
+	    |     /          \                |        |
+	 buffalo  c           s            buffalo     n
+	          |      _____|____                    |
+	          |     /          \                   |
+	          e    np          vp               buffalo
+	                |         __|__
+	                |        /     \
+	                n        v     np
+	                |        |      |
+	                |        |      |
+	             buffalo  buffalo   e
+
+
+	true ;
+	                  s
+	         _________|________
+	        /                  \
+	       np                  vp
+	     ___|___           _____|_____
+	    /       \         /           \
+	   adj       n        v           np
+	    |        |        |         ___|___
+	    |        |        |        /       \
+	 buffalo  buffalo  buffalo    adj       n
+	                               |        |
+	                               |        |
+	                            buffalo  buffalo
+
+
+	true ;
+	false.
+
+You can also ask it to find the smallest <i>n</i> such that buffalo<sup><i>n</i></sup> is a grammatical sentence:
+
+	?- min_n_for_s(N).
+	N = 3.
+
+# ...Why
+
+	I was in a boring 3-hour class with no wifi.
