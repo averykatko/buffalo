@@ -49,3 +49,30 @@ append_n(Base, Suffix, N, Result) :-
 	append(Base, Suffix, Seq),
 	N_minus_1 is N - 1,
 	append_n(Seq, Suffix, N_minus_1, Result).
+
+% silly fun queries:
+
+% parse buffalo^N as a sentence
+parse_buffalo_n_s(N, Tree) :-
+	seq_pow([buffalo], N, Sent),
+	s(Tree, no_gap, Sent, []).
+
+% parse buffalo^N as a sentence and draw parse tree
+draw_buffalo_n_s(N) :-
+	parse_buffalo_n_s(N, Tree),
+	drucke_baum(Tree).
+
+% find smallest N such that buffalo^N is a grammatical sentence
+min_n_for_s(N) :-
+	min_n_for_s(1, N).
+
+% find smallest N >= LowerBound such that buffalo^N is a grammatical sentence (helper for min_n_for_s/1)
+min_n_for_s(LowerBound, N) :-
+	(
+		parse_buffalo_n_s(LowerBound, _Tree),
+		N = LowerBound,
+		!)
+	; (
+		NewLowerBound is LowerBound + 1,
+		min_n_for_s(NewLowerBound, N)).
+
