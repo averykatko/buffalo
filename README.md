@@ -10,7 +10,7 @@ It draws snazzy ASCII syntax trees thanks to [Dr. Christoph Lehner's Prolog Tree
 
 ## How do I use it?
 
-Get SWI-Prolog, and call it like this:
+Get [SWI-Prolog](http://www.swi-prolog.org/), and call it like this:
 
 	$ swipl -s chris.pl buffalo.pl
 
