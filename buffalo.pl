@@ -2,22 +2,24 @@ s(s(NP,VP), no_gap) --> np(NP, Number), vp(VP, Number, no_gap, _Valence).
 s(s(np(e),VP), subj_gap) --> vp(VP, Number, no_gap, _Valence).
 s(s(NP,VP), obj_gap) --> np(NP, Number), vp(VP, Number, obj_gap, transitive).
 
-np(np(Det,Nbar), Number) --> det(Det, Number), nbar(Nbar, Number).
-np(np(Det,Nbar,Rel), Number) --> det(Det, Number), nbar(Nbar, Number), rel(Rel).
+np(NP, Number) --> det(Det, Number), adj(Adj), n(N, Number), rel(Rel), {build_np(Det, Adj, N, Rel, NP)}.
+
+build_np(Det, Adj, N, Rel, NP) :-
+	delete([Det, Adj, N, Rel, NP], epsilon, L),
+	NP =.. [np|L].
 
 det(det(a), singular) --> [a].
-det(det(e), plural) --> [].
+det(epsilon, plural) --> [].
 det(det(the), _Any) --> [the].
-
-nbar(nbar(Adj, Nbar), Number) --> adj(Adj), nbar(Nbar, Number).
-nbar(nbar(N), Number) --> n(N, Number).
 
 n(n(dog), singular) --> [dog].
 n(n(dogs), plural) --> [dogs].
 n(n(buffalo), _Any) --> [buffalo].
 
+adj(epsilon) --> [].
 adj(adj(buffalo)) -->[buffalo].
 
+rel(epsilon) --> [].
 rel(cp(C, S)) --> c(C), s(S, Gap), {Gap = subj_gap; Gap = obj_gap}.
 
 c(c(e)) --> [].
