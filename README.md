@@ -2,7 +2,7 @@
 
 English is fun!
 
-[What is it?](#how-do-i-use-it) | [How do I use it?]() | [...Why]() | [See also]()
+[What is it?](#what-is-it) | [How do I use it?](#how-do-i-use-it) | [...Why](#why) | [See also](#see-also)
 
 ## What is it?
 
