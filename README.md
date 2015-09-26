@@ -2,6 +2,8 @@
 
 English is fun!
 
+[What is it?](#how-do-i-use-it) | [How do I use it?]() | [...Why]() | [See also]()
+
 ## What is it?
 
 It's a grammar fragment written in Prolog to play with the idea of sentences consisting of only the word 'buffalo'.
