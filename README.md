@@ -170,3 +170,12 @@ You can also ask it to find the smallest <i>n</i> such that buffalo<sup><i>n</i>
 # ...Why
 
 I was in a boring 3-hour class with no wifi.
+
+# See also
+
+- [buffaloe](https://github.com/osnr/buffaloe), my friend [Omar Rizwan](https://rsnous.com/)'s web port of this program
+- [Wikipedia on "Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo"](https://en.wikipedia.org/wiki/Buffalo_buffalo_Buffalo_buffalo_buffalo_buffalo_Buffalo_buffalo)
+- *Prolog and Natural-Language Analysis* by Fernando C. N. Perreira and Stuard M. Shieber ([pdf](http://www.mtome.com/Publications/PNLA/prolog-digital.pdf))
+- [SWI-Prolog](http://www.swi-prolog.org/)
+- [the Prolog Wikibook](https://en.wikibooks.org/wiki/Prolog), particularly [the chapter on Definite Clause Grammars](https://en.wikibooks.org/wiki/Prolog/Definite_Clause_Grammars)
+- [Dr. Christoph Lehner's Prolog Tree Drawing Program](http://www.nyu.edu/pages/linguistics/workbook/lehner/)
